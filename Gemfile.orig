@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+source 'http://rubygems.org'
+ruby '2.3.1'
+
+gem 'twitter_ebooks'
+=======
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in twitter_ebooks.gemspec
+gemspec
+>>>>>>> 6aae42b2017fb6ceab8a4f75680b5f18137c513e

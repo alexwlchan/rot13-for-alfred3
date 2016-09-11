@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+worker: bundle exec ebooks start
+=======
+web: ebooks start
+>>>>>>> 6aae42b2017fb6ceab8a4f75680b5f18137c513e
