@@ -14,7 +14,7 @@ PATH
       twitter (~> 5.15)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     addressable (2.4.0)
     awesome_print (1.7.0)
@@ -106,6 +106,9 @@ DEPENDENCIES
   timecop
   twitter_ebooks!
   yard
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.13.0
