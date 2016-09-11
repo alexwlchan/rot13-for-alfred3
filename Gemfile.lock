@@ -60,6 +60,7 @@ GEM
     pry-byebug (3.4.0)
       byebug (~> 9.0)
       pry (~> 0.10)
+    rake (10.4.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -101,6 +102,7 @@ PLATFORMS
 DEPENDENCIES
   memory_profiler
   pry-byebug
+  rake
   rspec
   rspec-mocks
   timecop
