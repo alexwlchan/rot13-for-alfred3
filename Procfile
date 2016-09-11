@@ -1,0 +1,1 @@
+web: cd fontiago && ebooks start
