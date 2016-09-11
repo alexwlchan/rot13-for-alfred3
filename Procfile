@@ -1,1 +1,1 @@
-web: cd fontiago && ebooks start
+worker: ebooks start
