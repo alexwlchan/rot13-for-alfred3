@@ -1,1 +1,4 @@
-corpus/
+.*.swp
+pkg
+.yardoc
+doc
