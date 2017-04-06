@@ -1,7 +1,0 @@
-rvm:
-  - 2.1.7
-script:
-  - rspec spec
-notifications:
-  email:
-    - ebooks@mispy.me
