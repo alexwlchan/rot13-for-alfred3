@@ -27,4 +27,14 @@ With **r13**, you can action the item (usually the Enter key) to copy the cipher
 
 With **r13l**, action the item to display the ciphered text as large text.
 
+
+## Development
+
+The interesting logic happens in `rot13.py`, which gets dropped into an Alfred [script filter][script_filter].
+
+Once you've edited this script, run `build_workflow.py` to build a new workflow bundle.
+
+[script_filter]: https://www.alfredapp.com/help/workflows/inputs/script-filter/
+
+
 ## Gunaxf sbe ernqvat
