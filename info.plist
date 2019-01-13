@@ -71,25 +71,7 @@
 				<key>runningsubtext</key>
 				<string>Ciphering...</string>
 				<key>script</key>
-				<string>import sys
-
-query = sys.argv[1].encode("rot13")
-
-i = 0
-while i &lt; len(query):
-  if(query[i] == '\"'):
-    query = query[:i] + '\\' + query[i:]
-    i += 1
-  i += 1
-
-sys.stdout.write("""{"items": [
-    {
-        "type": "file",
-        "title": \""""+query+"""",
-        "subtitle": "Action this item to copy this result to the clipboard",
-        "arg": \""""+query+"""",
-    }
-]}""")</string>
+				<string>CLIPBOARD_SCRIPT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -153,24 +135,7 @@ sys.stdout.write("""{"items": [
 				<key>runningsubtext</key>
 				<string>Ciphering...</string>
 				<key>script</key>
-				<string>import json
-import sys
-
-query = sys.argv[1]
-encoded_query = query.encode("rot13")
-
-payload = {
-  "items": [
-    {
-      "type": "file",
-      "title": query,
-      "subtitle": "Action this item to copy the result to the clipboard",
-      "arg": query
-    }
-  ]
-}
-
-sys.stdout.write(json.dumps(payload))</string>
+				<string>LARGE_TYPE_SCRIPT</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
