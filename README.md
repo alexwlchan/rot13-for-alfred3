@@ -23,9 +23,9 @@ Alternatively, you can download it [directly from GitHub][github].
 
 There are two keywords (both configurable in the Alfred Preferences):
 
-With **r13**, you can action the item (usually the Enter key) to copy the ciphered text to your clipboard.
+With **`r13`**, you can action the item (usually the Enter key) to copy the ciphered text to your clipboard.
 
-With **r13l**, action the item to display the ciphered text as large text.
+With **`r13l`**, action the item to display the ciphered text as large text.
 
 
 ## Development
