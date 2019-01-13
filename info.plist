@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.rot13</string>
+	<key>connections</key>
+	<dict>
+		<key>1412902C-3BF6-41E8-8477-77633CA2D86A</key>
+		<array/>
+		<key>CE960F7D-4CB0-4084-9141-682B6F0AB10D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1412902C-3BF6-41E8-8477-77633CA2D86A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D5678740-2ACF-4598-9DEE-69AB8B96D58D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5EB85E79-B554-411F-A96C-59A9256E4F6D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>@fontiago</string>
+	<key>description</key>
+	<string>send text through the rot13 cipher with Alfred 3.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>rot13</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>r13</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Ciphering...</string>
+				<key>script</key>
+				<string>import sys
+
+query = sys.argv[1].encode("rot13")
+
+i = 0
+while i &lt; len(query):
+  if(query[i] == '\"'):
+    query = query[:i] + '\\' + query[i:]
+    i += 1
+  i += 1
+
+sys.stdout.write("""{"items": [
+    {
+        "type": "file",
+        "title": \""""+query+"""",
+        "subtitle": "Action this item to copy this result to the clipboard",
+        "arg": \""""+query+"""",
+    }
+]}""")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type text to cipher it through rot13.</string>
+				<key>title</key>
+				<string>rot13</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CE960F7D-4CB0-4084-9141-682B6F0AB10D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1412902C-3BF6-41E8-8477-77633CA2D86A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>rot13</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Ciphering...</string>
+				<key>script</key>
+				<string>import json
+import sys
+
+query = sys.argv[1]
+encoded_query = query.encode("rot13")
+
+payload = {
+  "items": [
+    {
+      "type": "file",
+      "title": query,
+      "subtitle": "Action this item to copy the result to the clipboard",
+      "arg": query
+    }
+  ]
+}
+
+sys.stdout.write(json.dumps(payload))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type text to cipher it through rot13 and action to display in big text.</string>
+				<key>title</key>
+				<string>rot13</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D5678740-2ACF-4598-9DEE-69AB8B96D58D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>largetypetext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>5EB85E79-B554-411F-A96C-59A9256E4F6D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1412902C-3BF6-41E8-8477-77633CA2D86A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>5EB85E79-B554-411F-A96C-59A9256E4F6D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>CE960F7D-4CB0-4084-9141-682B6F0AB10D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>D5678740-2ACF-4598-9DEE-69AB8B96D58D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
