@@ -4,7 +4,7 @@ A [rot13 cipher][rot13] implementation for Alfred 3.
 Requires the Alfred Powerpck to use.
 Originally made by [@fontiago][fontiago], and tweaked by alexwlchan.
 
-![](screenshot.png)
+<img src="screenshot.png" style="max-width: 575px;">
 
 [rot13]: https://en.wikipedia.org/wiki/ROT13
 [fontiago]: https://github.com/fontiago/rot13-for-alfred3
